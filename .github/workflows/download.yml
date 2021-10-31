@@ -1,0 +1,33 @@
+name: Install
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+
+jobs:
+  build:
+    name: Node.js ${{ matrix.node }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04, macos-10.15, macos-11]
+        node: [14, 16, 17]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - name: Install
+      run: |
+        npm install
+        rm -rf node_modules
+        npm install
+        rm -rf node_modules
+        npm install
+        rm -rf node_modules
+        npm install
+        rm -rf node_modules
+        npm install
+        rm -rf node_modules
