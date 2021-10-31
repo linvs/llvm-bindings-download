@@ -1,8 +1,7 @@
 #!/bin/bash
 
-count=$(($RANDOM%3))
-
-for i in (1..$count)
+count=$(($RANDOM%4))
+for ((i=0;i<$count;i++))
 do
     npm install --ignore-scripts
     rm -rf node_modules
