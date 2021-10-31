@@ -1,0 +1,7 @@
+{
+  "name": "llvm-bindings-download",
+  "version": "1.0.0",
+  "dependencies": {
+    "llvm-bindings": "*"
+  }
+}
