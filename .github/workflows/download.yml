@@ -1,8 +1,11 @@
 name: Install
 
 on:
+  push:
+    branches:
+      - '**'
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   build:
