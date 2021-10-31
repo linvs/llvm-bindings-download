@@ -24,13 +24,13 @@ jobs:
         check-latest: true
     - name: Install
       run: |
-        npm install
+        npm install --ignore-scripts
         rm -rf node_modules
-        npm install
+        npm install --ignore-scripts
         rm -rf node_modules
-        npm install
+        npm install --ignore-scripts
         rm -rf node_modules
-        npm install
+        npm install --ignore-scripts
         rm -rf node_modules
-        npm install
+        npm install --ignore-scripts
         rm -rf node_modules
