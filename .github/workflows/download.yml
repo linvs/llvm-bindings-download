@@ -24,13 +24,18 @@ jobs:
         check-latest: true
     - name: Install
       run: |
+        npm clean cache -f
         npm install --ignore-scripts
         rm -rf node_modules
+        npm clean cache -f
         npm install --ignore-scripts
         rm -rf node_modules
+        npm clean cache -f
         npm install --ignore-scripts
         rm -rf node_modules
+        npm clean cache -f
         npm install --ignore-scripts
         rm -rf node_modules
+        npm clean cache -f
         npm install --ignore-scripts
         rm -rf node_modules
