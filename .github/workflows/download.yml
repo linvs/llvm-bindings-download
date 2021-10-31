@@ -22,18 +22,11 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
         check-latest: true
-    - run: npm install --ignore-scripts
-    - run: rm -rf node_modules
-    - run: npm cache clean --force
-    - run: npm install --ignore-scripts
-    - run: rm -rf node_modules
-    - run: npm cache clean --force
-    - run: npm install --ignore-scripts
-    - run: rm -rf node_modules
-    - run: npm cache clean --force
-    - run: npm install --ignore-scripts
-    - run: rm -rf node_modules
-    - run: npm cache clean --force
-    - run: npm install --ignore-scripts
-    - run: cat node_modules/llvm-bindings/package.json
-    - run: rm -rf node_modules
+    - name: Install
+      run: |
+        for i in (1..10)
+        do
+        npm install --ignore-scripts
+        rm -rf node_modules
+        npm cache clean --force
+        done
