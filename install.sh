@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$count=$(($RANDOM%5+1))
+count=$(($RANDOM%3))
 
 for i in (1..$count)
 do
