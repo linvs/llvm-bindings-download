@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-tmp=$(date +%s%N)
+tmp=$(date +%s)
 count=$(($tmp % 7))
 for ((i=0;i<$count;i++))
 do
