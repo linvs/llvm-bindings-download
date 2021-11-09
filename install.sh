@@ -10,3 +10,4 @@ do
     rm -rf node_modules
     npm cache clean --force
 done
+echo 'Install Count: '$count
