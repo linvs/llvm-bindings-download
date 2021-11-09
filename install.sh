@@ -2,7 +2,7 @@
 
 
 tmp=$(date +%s)
-count=$(($tmp % 7))
+count=$(($tmp % 5 + 3))
 for ((i=0;i<$count;i++))
 do
     npm install --ignore-scripts
