@@ -6,7 +6,6 @@ function install(version, count) {
         execSync("rm -rf node_modules");
         execSync("npm cache clean --force");
     }
-    console.log(`已进行${count}次llvm-bindings@${version}的安装`);
 } 
 
 const versions = [
@@ -32,6 +31,16 @@ const versions = [
 
 const countBase = Math.ceil(Math.random() * 2)
 
+const stats = new Array(versions.length);
+
 for(let i = 0; i < versions.length; ++i) {
     install(versions[i], countBase * (i + 1))
+    stats[i] = {
+        version: versions[i],
+        count: countBase * (i + 1)
+    };
+}
+
+for(let stat of stats) {
+    console.log(`已进行${stat.count}次llvm-bindings@${stat.version}的安装`);
 }
