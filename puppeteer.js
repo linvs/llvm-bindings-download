@@ -6,18 +6,27 @@ const puppeteer = require('puppeteer');
     ignoreHTTPSErrors: true,
     args: [`--window-size=${1920},${1080}`]
   });
-  for (let i = 0; i < 200; ++i) {
-		const page = await browser.newPage();
-    await page.goto("https://juejin.cn/post/6908523306211606542", {
-      timeout: 2000,
-      waitUntil: "domcontentloaded",
-    });
-		await page.waitForTimeout(2000);
-		const viewsCount = await page.$eval('.views-count', el => el.innerText);
-		console.log(viewsCount.slice(3));
-    await autoScroll(page)
-		await page.waitForTimeout(2000);
-		await page.close();
+  for (let i = 0; i < 100; ++i) {
+		console.log(`进度: ${i} / 120`)
+		let page = null
+		try {
+			page = await browser.newPage();
+			await page.goto("https://juejin.cn/post/6908523306211606542", {
+				waitUntil: "domcontentloaded",
+			});
+			await page.waitForTimeout(2000);
+			const viewsCount = await page.$eval('.views-count', el => el.innerText);
+			console.log(viewsCount.slice(3));
+			await autoScroll(page)
+			await page.waitForTimeout(2000);
+			await page.close();
+		} catch {
+			console.log('页面发生错误')
+			if (page) {
+				await page.close();
+			}
+		}
+		console.log()
   }
 	await browser.close();
 })();

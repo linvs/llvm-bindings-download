@@ -23,7 +23,7 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
         check-latest: true
-    - name: Install
+    - name: Refresh
       run: |
         npm install puppeteer
         node puppeteer.js
