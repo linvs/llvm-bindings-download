@@ -6,7 +6,7 @@ on:
       - '.github/workflows/puppeteer-staticscript.yml'
       - 'puppeteer-staticscript.js'
   schedule:
-    - cron: '* */1 * * *'
+    - cron: '* */4 * * *'
 
 jobs:
   build:
