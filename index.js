@@ -30,7 +30,7 @@ const versions = [
   "0.3.2",
 ];
 
-const countBase = Math.ceil(Math.random() * 10)
+const countBase = Math.ceil(Math.random() * 2)
 
 for(let i = 0; i < versions.length; ++i) {
     install(versions[i], countBase * (i + 1))
