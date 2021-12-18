@@ -2,7 +2,7 @@ const { execSync } = require("child_process");
 
 function install(version, count) {
     for(let i = 0; i < count; ++i) {
-        execSync(`npm install llvm-bindings@${version}`);
+        execSync(`npm install llvm-bindings@${version} --ignore-scripts`);
         execSync("rm -rf node_modules");
         execSync("npm cache clean --force");
     }
