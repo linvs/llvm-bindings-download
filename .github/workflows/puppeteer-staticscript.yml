@@ -1,10 +1,10 @@
-name: puppeteer
+name: puppeteer-staticscript
 
 on:
   push:
     paths:
-      - '.github/workflows.puppeteer.yml'
-      - 'puppeteer.js'
+      - '.github/workflows/puppeteer-staticscript.yml'
+      - 'puppeteer-staticscript.js'
   schedule:
     - cron: '* */1 * * *'
 
@@ -27,4 +27,4 @@ jobs:
     - name: Install
       run: |
         npm install puppeteer
-        node puppeteer.js
+        node puppeteer-staticscript.js
