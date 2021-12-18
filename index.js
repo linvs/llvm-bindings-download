@@ -29,15 +29,13 @@ const versions = [
   "0.3.2",
 ];
 
-const countBase = Math.ceil(Math.random() * 2)
-
 const stats = new Array(versions.length);
 
 for(let i = 0; i < versions.length; ++i) {
-    install(versions[i], countBase * (i + 1))
+    install(versions[i], i + 1)
     stats[i] = {
         version: versions[i],
-        count: countBase * (i + 1)
+        count: i + 1,
     };
 }
 
