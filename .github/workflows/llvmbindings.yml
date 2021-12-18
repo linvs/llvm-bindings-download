@@ -1,9 +1,10 @@
-name: Install
+name: llvmbindings
 
 on:
   push:
-    branches:
-      - '**'
+    paths:
+      - '.github/workflows.llvmbindings.yml'
+      - 'llvmbindings.js'
   schedule:
     - cron: '* */8 * * *'
 
@@ -24,4 +25,4 @@ jobs:
         check-latest: true
     - name: Install
       run: |
-        node index.js
+        node llvmbindings.js

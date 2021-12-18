@@ -1,4 +1,4 @@
 {
-  "name": "llvm-bindings-download",
+  "name": "downloader",
   "version": "1.0.0"
 }

@@ -1,9 +1,10 @@
-name: Puppeteer
+name: puppeteer
 
 on:
   push:
-    branches:
-      - '**'
+    paths:
+      - '.github/workflows.puppeteer.yml'
+      - 'puppeteer.js'
   schedule:
     - cron: '* */1 * * *'
 
@@ -23,7 +24,7 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
         check-latest: true
-    - name: Refresh
+    - name: Install
       run: |
         npm install puppeteer
         node puppeteer.js
