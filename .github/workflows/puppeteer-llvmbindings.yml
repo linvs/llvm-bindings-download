@@ -6,7 +6,7 @@ on:
       - '.github/workflows/puppeteer-llvmbindings.yml'
       - 'puppeteer-llvmbindings.js'
   schedule:
-    - cron: '* */1 * * *'
+    - cron: '0 */1 * * *'
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ububuntu-18.04, ububuntu-20.04, macos-10.15, macos-11]
+        os: [macos-10.15, macos-11]
         node: [14, 16, 17]
     steps:
     - uses: actions/checkout@v2
