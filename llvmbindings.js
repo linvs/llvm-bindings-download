@@ -30,18 +30,16 @@ const versions = [
   "0.3.3",
 ];
 
-install("0.3.3", 1);
+const stats = new Array(versions.length);
 
-// const stats = new Array(versions.length);
+for(let i = 0; i < versions.length; ++i) {
+    install(versions[i], i + 1)
+    stats[i] = {
+        version: versions[i],
+        count: i + 1,
+    };
+}
 
-// for(let i = 0; i < versions.length; ++i) {
-//     install(versions[i], i + 1)
-//     stats[i] = {
-//         version: versions[i],
-//         count: i + 1,
-//     };
-// }
-
-// for(let stat of stats) {
-//     console.log(`已进行${stat.count}次llvm-bindings@${stat.version}的安装`);
-// }
+for(let stat of stats) {
+    console.log(`已进行${stat.count}次llvm-bindings@${stat.version}的安装`);
+}
