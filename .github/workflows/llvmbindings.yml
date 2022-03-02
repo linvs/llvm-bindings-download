@@ -2,9 +2,6 @@ name: llvmbindings
 
 on:
   push:
-    paths:
-      - '.github/workflows.llvmbindings.yml'
-      - 'llvmbindings.js'
   schedule:
     - cron: '0 */8 * * *'
 
