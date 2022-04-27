@@ -9,8 +9,6 @@ function install(version, count) {
 } 
 
 const versions = [
-  "0.0.3",
-  "0.0.4",
   "0.1.0",
   "0.1.1",
   "0.1.2",
@@ -30,16 +28,21 @@ const versions = [
   "0.3.3",
   "0.3.4",
   "0.3.5",
-  "0.3.6"
+  "0.3.6",
+  "0.3.7"
 ];
 
 const stats = new Array(versions.length);
 
 for(let i = 0; i < versions.length; ++i) {
+    let cnt = Math.ceil(Math.random() * (i + 1));
+    if (i == versions.length - 1) {
+        cnt = i + 1;
+    }
     install(versions[i], i + 1)
     stats[i] = {
         version: versions[i],
-        count: i + 1,
+        count: i + 1
     };
 }
 
